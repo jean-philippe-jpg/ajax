@@ -6,11 +6,19 @@
 </div>
 </div>
 <div class="container">
+    <div class="text-center">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editPhotoModal">Ajouter</button>
+    </div>
+   
 <div class="row row-cols-2 row-cols-lg-3 p-3">
     <div class="col p-3">
         <div class="image-card text-white">
         <img src="../images/poisson.jpg" class="rounded w-100" />
         <p class="titre-image">Titre image</p>
+        <div class="action-images-buttons">
+             <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#editPhotoModal"><i class="bi bi-pen"></i></button>
+            <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#deletePhotoModal"><i class="bi bi-trash"></i></button>
+        </div>
     </div>
     </div>
      <div class="col p-3">
@@ -43,6 +51,66 @@
         <p class="titre-image">Titre image</p>
     </div>
     </div>
+    </div>
+   <div class="text-center">
+        <button class="btn btn-primary">Reserver</button>
+    </div>
+    </div>
+    
+
+<!-- Modal edition -->
+<div class="modal fade" id="editPhotoModal" tabindex="-1" aria-labelledby="editPhotoModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="editPhotoModal">Edition photo</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form>
+  <div class="mb-3">
+    <label for="namePhotoInput" class="form-label">Titre image</label>
+    <input type="text" class="form-control" id="namePhotoInput" placeholder="dos de cabillau" >
+   
+  </div>
+  <div class="mb-3">
+    <label for="imageInput" class="form-label">Mot de passe</label>
+    <input type="file" class="form-control" id="imageInput">
+  </div>
+  <div class="text-center">
+  <button type="submit" class="btn btn-primary ">Submit</button>
+  </div>
+</form>
+      </div>
+     
+    </div>
+  </div>
 </div>
+
+<!-- Modal suppression -->
+<div class="modal fade" id="deletePhotoModal" tabindex="-1" aria-labelledby="editPhotoModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="deletePhotoModal">Etes vous sure de vouloire supprimer cette image</h1>
+       
+      </div>
+      <div class="modal-body">
+      <form>
+  <div class="mb-3">
+    <p>Titre</p>
+    <img src="../images/poisson.jpg" class="rounded w-100" />
+   
+  </div>
+  
+  <div class="text-center">
+  <button type="submit" class="btn btn-danger ">Supprimer</button>
+   <button type="button" class="btn btn-secondary " data-bs-dismiss="modal">Annulé</button>
+  </div>
+</form>
+      </div>
+     
+    </div>
+  </div>
 </div>
-</div>
+
