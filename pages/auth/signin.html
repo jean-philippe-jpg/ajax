@@ -8,16 +8,19 @@
 <div class="container ">
 <form>
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="championauto@gmail.com" >
-   
+    <label for="inputEmail1" class="form-label">Email</label>
+    <input type="email" class="form-control" id="inputEmail1" placeholder="championauto@gmail.com" >
+    <div class="invalid-feedback">
+        l'email et le mot de passe ne correspondent pas
   </div>
+  </div>
+  
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
+    <label for="inputPassword" class="form-label">Mot de passe</label>
+    <input type="password" class="form-control" id="inputPassword">
   </div>
   <div class="text-center">
-  <button type="submit" class="btn btn-primary ">Submit</button>
+  <button type="button" class="btn btn-primary "  id="btnSignin">Connexion</button>
   </div>
 </form>
 <div class="text-center pt-3">

@@ -1,0 +1,63 @@
+<div class="hero-scene text-center text-white">
+<div class="hero-scene-content">
+      
+    <h1>Reserver</h1>
+  
+</div>
+</div>
+
+<form>
+    <div class="mb-3">
+    <label for="firstName" class="form-label">Nom</label>
+    <input disabled type="text" class="form-control" id="firstName" placeholder="Nom" value="Does">
+  </div>
+    <div class="mb-3">
+    <label for="lastName" class="form-label">Prenom</label>
+    <input disabled  type="text" class="form-control" id="lastName" placeholder="Prenom" value="John">
+  </div>
+  <div class="mb-3">
+    <label for="allergiesInput" class="form-label">Allergies</label>
+    <input type="text" class="form-control" id="allergiesInput" placeholder="vos allergies" value="fruis de mer" >
+  </div>
+  <div class="mb-3">
+    <label for="convivesInput" class="form-label">Nombre de convives</label>
+    <input type="number" class="form-control" id="convivesInput" placeholder="nombre de convives habituelle" value="4">
+  </div>
+  <div class="mb-3">
+    <label for="dateInput" class="form-label">Date</label>
+    <input type="date" class="form-control" id="dateInput" >
+  </div>
+  <div class="mb-3">
+    <div class="form-check">
+  <input class="form-check-input" type="radio" name="serviceSelect" id="midiRadio" >
+  <label class="form-check-label" for="midiRadio">
+    Midi
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="serviceSelect" id="soirRadio" checked >
+  <label class="form-check-label" for="soirRadio">
+    Soir
+  </label>
+</div>
+  </div>
+  
+<div class="mb-3">
+   <label for="selectHour" class="form-label">Horair</label>
+<select class="form-select" id="selectHour">
+  <option >19:30</option>
+  <option >19:45</option>
+  <option >20:00</option>
+  <option >20:15</option>
+  <option >20:30</option>
+  <option >20:45</option>
+  <option >21:00</option>
+
+</select>
+</div>
+  
+  <div class="text-center">
+  <button type="submit" class="btn btn-primary ">Reserver</button>
+  <button type="button" class="btn btn-danger ">Annuler</button>
+  </div>
+</form>
