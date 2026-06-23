@@ -1,8 +1,9 @@
-
+const apiUrl = 'http://127.0.0.1:8000';
 const tokenCookieName = "accesToken";
 const roleCookieName = "role";
 const signoutBtn = document.getElementById("signout-btn");
 signoutBtn.addEventListener('click', signout);
+
 function getRoles(){
 
     return getCookie(roleCookieName);
@@ -98,11 +99,58 @@ function showHideElements(){
                 }
                 break
        }
-
-    
-
        });
 
    
+
+}
+
+function sanitizeHtml(text){
+
+    let tempHtml = document.createElement('div');
+    tempHtml.textContent = text;
+    return tempHtml.innerHTML;
+}
+
+
+function getInfoUser(){
+
+     let myHeaders = new Headers();
+     myHeaders.append( "X-AUTH-TOKEN",getToken());
+   
+
+     let requestOptions = {
+        method: 'Get',
+        headers: myHeaders,
+        redirect: 'follow'
+    };
+
+
+   fetch(apiUrl + "/api/account/me", requestOptions)
+
+    .then( Response => {
+
+        if(Response.ok){
+         return Response.json();
+
+        }else{
+            console.log('impossible de récuperer les données')
+        }
+        
+    })
+    .then( result => {
+
+        return result;
+    })
+    .catch(error => {
+
+        cpnsole.error("errur lors de la récuperation des données",error)
+    });
+   
+
+
+        
+    
+
 
 }

@@ -3,6 +3,7 @@ const inputPrenom = document.getElementById("lastName");
 const inputMail = document.getElementById("inputEmail");
 const inputPassword = document.getElementById("InputPassword");
 const inputValidationPassword = document.getElementById("valideInputPassword");
+const formSignup = document.getElementById("form-signup");
 const btnValidation = document.getElementById("btnValidate");
 
 
@@ -11,6 +12,7 @@ inputPrenom.addEventListener("keyup", validateForm);
 inputMail.addEventListener("keyup", validateForm);
 inputPassword.addEventListener("keyup", validateForm);
 inputValidationPassword.addEventListener("keyup", validateForm);
+btnValidation.addEventListener("click", signupUser);
 
 function validateForm(){
 
@@ -110,3 +112,46 @@ function validateRequired(input){
 
     }
 }
+
+function signupUser(){
+
+let formData = new FormData(formSignup);
+
+    const myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+const raw = JSON.stringify({
+  "firstName": formData.get('firstName'),
+  "lastName": formData.get('lastName'),
+  "email": formData.get('email'),
+  "password": formData.get('password')
+});
+
+const requestOptions = {
+  method: "POST",
+  headers: myHeaders,
+  body: raw,
+  redirect: "follow"
+};
+
+fetch("http://127.0.0.1:8000/api/registration", requestOptions)
+  .then((response) => {
+
+            if(response.ok){
+            return response.json();
+        }
+        else{
+            alert("Erreur lors de l'inscription");
+        }
+  })
+  .then((result) => {
+
+
+     alert("Bravo "+ formData.get("firstName")+", vous êtes maintenant inscrit, vous pouvez vous connecter.");
+        document.location.href="/signin";
+  })
+  .catch((error) => console.error(error));
+
+}
+
+var titi = "toto";
